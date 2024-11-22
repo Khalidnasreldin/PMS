@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+</head>
+<body>
+    <div class="main">
+        <h1>products management system</h1>    
+        <form action="" method="post">
+            {% csrf_token %}
+            {{ProductForm}}
+            <button>create product</button>
+        </form>
+        <table>
+            <thead>
+                <tr>
+                    <th>title</th>
+                    <th>brand</th>
+                    <th>description</th>
+                    <th>price</th>
+                    <th>quantity</th>
+                    <th>created at</th>
+                    <th>update</th>
+                    <th>delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% if products %}
+                    {% for product in products %}
+                        <tr>
+                            <td>{{product.title}}</td>
+                            <td>{{product.brand}}</td>
+                            <td>{{product.description}}</td>
+                            <td>{{product.price}}</td>
+                            <td>{{product.qty}}</td>
+                            <td>{{product.created}}</td>
+                            <td><a href="{% url "update-product" product.id %}">update</a></td>
+                            <td><a href="{% url "delete-product" product.id %}">delete</a></td>
+                        </tr>
+                    {% endfor %}
+                {% endif %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

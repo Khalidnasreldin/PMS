@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>update</title>
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+</head>
+<body>
+    <div class="update">
+        <h1>update product</h1>
+        <form action="" method="post">
+            {% csrf_token %}
+            {{ProductForm}}
+            <button>update product</button>
+        </form>
+        <a href="{% url "" %}">cancel</a>
+    </div>
+</body>
+</html>
