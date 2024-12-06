@@ -86,8 +86,8 @@ function showProducts() {
                     <td>${productsList[i].discount}</td>
                     <td>${productsList[i].total}</td>
                     <td>${productsList[i].category}</td>
-                    <td><button id="update" onclick="updateProduct(${i})"><img src="/assets/icons/edit.png" alt="edit-btn"></button></td>
-                    <td><button id="delete" onclick="deleteProduct(${i})"><img src="/assets/icons/delete.png" alt="delete-btn"></button></td>
+                    <td><button id="update" onclick="updateProduct(${i})"><img src="assets/icons/edit.png" alt="edit-btn"></button></td>
+                    <td><button id="delete" onclick="deleteProduct(${i})"><img src="assets/icons/delete.png" alt="delete-btn"></button></td>
                 </tr>
             `;
     }
