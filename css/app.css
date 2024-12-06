@@ -1,0 +1,229 @@
+:root {
+    --primary: #fcc403;
+}
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body {
+    background-color: #000;
+}
+.pms {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding-top: 10px;
+}
+.pms .input-fields{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.pms input {
+    font-size: 16px;
+    margin: 5px 0;
+    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    outline: none;
+    background-color: #000;
+    transition: all 0.5s;
+}
+.pms .input-fields input:focus {
+    border-color: var(--primary);
+}
+.pms .input-fields .price {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.pms .input-fields .price input {
+    flex: 1;
+    color: #FCFCFC;
+}
+.pms .input-fields input {
+    color: white;
+}
+.pms .input-fields .price span {
+    width: 200px;
+    color: #FCFCFC;
+    font-size: 16px;
+    text-align: start;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    text-transform: capitalize;
+    padding: 10px 0;
+    padding-left: 5px;
+}
+.pms .input-fields button {
+    color: #FCFCFC;
+    font-size: 16px;
+    text-transform: capitalize;
+    padding: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background-color: royalblue;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.pms .input-fields button:hover {
+    background-color: dodgerblue;
+}
+.pms .output-fields {
+    width: 100%;
+}
+.pms .search-field {
+    width: 100%;
+}
+.pms .search-field input {
+    width: 100%;
+}
+.pms .output-fields .search-btns {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+.pms .output-fields .search-btns button {
+    width: 100%;
+    color: #FCFCFC;
+    font-size: 16px;
+    text-transform: capitalize;
+    padding: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background-color: royalblue;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.pms .output-fields .search-btns button:hover {
+    background-color: dodgerblue;
+}
+.pms .delete-all-btn {
+    width: 100%;
+}
+.pms .delete-all-btn button {
+    width: 100%;
+    color: #FCFCFC;
+    font-size: 16px;
+    text-transform: capitalize;
+    padding: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background-color: crimson;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.pms .delete-all-btn button:hover {
+    background-color: rgb(221, 6, 49);
+}
+table {
+    width: 100%;
+}
+table tr {
+    width: 100px;
+    overflow: auto;
+}
+table thead tr th {
+    width: 100px;
+    color: var(--primary);
+    font-size: 16px;
+    text-transform: uppercase;
+    background-color: #111;
+    padding: 5px;
+    border-bottom: 1px solid var(--primary);
+    overflow: hidden;
+}
+table tbody tr td {
+    color: #FCFCFC;
+    font-size: 16px;
+    padding: 10px 5px;
+    text-align: center;
+    background-color: #111;
+    overflow: hidden;
+    border-bottom: 1px solid #111;
+}
+table tbody tr td:hover{
+    border-bottom-color: gold;
+}
+table tbody tr td button {
+    color: #111;
+    border: none;
+    outline: none;
+    background-color: #111;
+    cursor: pointer;
+}
+/* responsive design */
+@media (max-width: 768px) {
+    table thead tr th:nth-child(6) {
+        display: none;
+    }
+    table tbody tr td:nth-child(6) {
+        display: none;
+    }
+    table tr th:nth-child(8) {
+        display: none;
+    }
+    table tr td:nth-child(8) {
+        display: none;
+    }
+}
+@media (max-width: 480px) {
+    .price {
+        width: 100%;
+        flex-direction: column;
+    }
+    .price input {
+        width: 100%;
+    }
+    #totalSpanEl {
+        width: 100%;
+    }
+    .search-btns {
+        flex-wrap: wrap;
+    }
+    table {
+        font-size: smaller;
+    }
+    table thead tr th{
+        font-size: 12px;
+    }
+    table tbody tr td{
+        font-size: 12px;
+    }
+    table tbody tr td img{
+        width: 20px;
+    }
+    table tr th:nth-child(1) {
+        display: none;
+    }
+    table tr td:nth-child(1) {
+        display: none;
+    }
+    table tr th:nth-child(6) {
+        display: none;
+    }
+    table tr td:nth-child(6) {
+        display: none;
+    }
+    table tr th:nth-child(5) {
+        display: none;
+    }
+    table tr td:nth-child(5) {
+        display: none;
+    }
+    table tr th:nth-child(4) {
+        display: none;
+    }
+    table tr td:nth-child(4) {
+        display: none;
+    }
+}

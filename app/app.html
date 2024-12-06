@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PMS</title>
+    <link rel="stylesheet" href="/css/app.css">
+    <script src="/js/app.js" defer></script>
+</head>
+<body>
+    <main class="pms">
+        <div class="input-fields">
+            <input type="text" id="productTitle" placeholder="product title">
+            <div class="price">
+                <input onkeyup="getTotal()" type="number" id="productPrice" placeholder="product price">
+                <input onkeyup="getTotal()" type="number" id="productTaxes" placeholder="product taxes">
+                <input onkeyup="getTotal()" type="number" id="productAds" placeholder="product ads">
+                <input onkeyup="getTotal()" type="number" id="productDiscount" placeholder="product discount">
+                <span id="totalSpanEl">total price : <small id="totalPrice"></small> </span>
+            </div>
+            <input type="number" id="count" placeholder="count">
+            <input type="text" id="productCategory" placeholder="product category">
+            <button id="submit">create</button>
+        </div>
+
+        <div class="output-fields">
+            <div class="search-field">
+                <input onkeyup="searchProduct(this.value)" type="text" id="search" placeholder="search">
+            </div>
+            <div class="search-btns">
+                <button onclick="detectSearchState(this.id)" id="searchTitle">search title</button>
+                <button onclick="detectSearchState(this.id)" id="searchCategory">search category</button>
+            </div>
+        </div>
+
+        <div id="deleteAllDiv" class="delete-all-btn">
+            <!-- delete all button will load here -->
+        </div>        
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>title</th>
+                    <th>price</th>
+                    <th>taxes</th>
+                    <th>ads</th>
+                    <th>discount</th>
+                    <th>total</th>
+                    <th>category</th>
+                    <th>update</th>
+                    <th>delete</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+                <!-- Products will loads here -->
+            </tbody>
+        </table>        
+    </main>
+</body>
+</html>
