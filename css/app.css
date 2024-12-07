@@ -92,6 +92,9 @@ body {
     justify-content: space-between;
     gap: 10px;
 }
+.pms .output-fields .search-field input {
+    color: #FCFCFC;
+}
 .pms .output-fields .search-btns button {
     width: 100%;
     color: #FCFCFC;

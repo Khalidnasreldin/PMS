@@ -29,35 +29,39 @@ if(localStorage.product != null) {
     productsList = JSON.parse(localStorage.product)
 }
 submit.onclick = function() {
-    let newProduct = {
-        title:productTitle.value.toLowerCase(),
-        price:productPrice.value,
-        taxes:productTaxes.value,
-        ads:productAds.value,
-        discount:productDiscount.value,
-        total:totalPrice.innerText,
-        count:count.value,
-        category:productCategory.value.toLowerCase(),
-    }
-
-    if (state == "create") {
-        if(newProduct.count > 1) {
-            for(let i = 0; i < newProduct.count; i++) {
+    if (!productTitle.checkValidity()) {
+        alert ("Fill product title field")
+    } else {
+        let newProduct = {
+            title:productTitle.value.toLowerCase(),
+            price:productPrice.value,
+            taxes:productTaxes.value,
+            ads:productAds.value,
+            discount:productDiscount.value,
+            total:totalPrice.innerText,
+            count:count.value,
+            category:productCategory.value.toLowerCase(),
+        }
+    
+        if (state == "create") {
+            if(newProduct.count > 1) {
+                for(let i = 0; i < newProduct.count; i++) {
+                    productsList.push(newProduct);
+                }
+            } else {
                 productsList.push(newProduct);
             }
         } else {
-            productsList.push(newProduct);
+            productsList[TempIdUpdate] = newProduct;
+            state = "create";
+            submit.innerText = "create";
+            count.style.display = "block";
         }
-    } else {
-        productsList[TempIdUpdate] = newProduct;
-        state = "create";
-        submit.innerText = "create";
-        count.style.display = "block";
+        
+        localStorage.setItem('product', JSON.stringify(productsList))
+        clearData()
+        showProducts()
     }
-    
-    localStorage.setItem('product', JSON.stringify(productsList))
-    clearData()
-    showProducts()
 }
 
 // clear input
@@ -163,8 +167,8 @@ function searchProduct(value) {
                         <td>${productsList[i].discount}</td>
                         <td>${productsList[i].total}</td>
                         <td>${productsList[i].category}</td>
-                        <td><button id="update" onclick="updateProduct(${i})">update</button></td>
-                        <td><button id="delete" onclick="deleteProduct(${i})">delete</button></td>
+                        <td><button id="update" onclick="updateProduct(${i})"><img src="assets/icons/edit.png" alt="edit-btn"></button></td>
+                        <td><button id="delete" onclick="deleteProduct(${i})"><img src="assets/icons/delete.png" alt="edit-btn"></button></td>
                     </tr>
                 `;               
             }
@@ -182,8 +186,8 @@ function searchProduct(value) {
                         <td>${productsList[i].discount}</td>
                         <td>${productsList[i].total}</td>
                         <td>${productsList[i].category}</td>
-                        <td><button id="update" onclick="updateProduct(${i})">update</button></td>
-                        <td><button id="delete" onclick="deleteProduct(${i})">delete</button></td>
+                        <td><button id="update" onclick="updateProduct(${i})"><img src="assets/icons/edit.png" alt="edit-btn"></button></td>
+                        <td><button id="delete" onclick="deleteProduct(${i})"><img src="assets/icons/delete.png" alt="edit-btn"></button></td>
                     </tr>
                 `;               
             }

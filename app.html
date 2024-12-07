@@ -11,7 +11,7 @@
 <body>
     <main class="pms">
         <div class="input-fields">
-            <input type="text" id="productTitle" placeholder="product title">
+            <input type="text" id="productTitle" placeholder="product title" required>
             <div class="price">
                 <input onkeyup="getTotal()" type="number" id="productPrice" placeholder="product price">
                 <input onkeyup="getTotal()" type="number" id="productTaxes" placeholder="product taxes">
@@ -19,8 +19,8 @@
                 <input onkeyup="getTotal()" type="number" id="productDiscount" placeholder="product discount">
                 <span id="totalSpanEl">total price : <small id="totalPrice"></small> </span>
             </div>
-            <input type="number" id="count" placeholder="count">
             <input type="text" id="productCategory" placeholder="product category">
+            <input type="number" id="count" placeholder="count">
             <button id="submit">create</button>
         </div>
 
